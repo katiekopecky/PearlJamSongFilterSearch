@@ -13,6 +13,7 @@
           <e p="components" t="Include">
             <e p="Counter.tsx" t="Include" />
             <e p="FetchData.tsx" t="Include" />
+            <e p="FilterMakeupSearch.tsx" t="Include" />
             <e p="FilterSearch.tsx" t="Include" />
             <e p="Home.tsx" t="Include" />
             <e p="Layout.tsx" t="Include" />
