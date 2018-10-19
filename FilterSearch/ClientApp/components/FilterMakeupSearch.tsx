@@ -24,7 +24,7 @@ export class FilterMakeupSearch extends React.Component<RouteComponentProps<{}>,
         
         fetch(url)
             .then(response => response.json())
-            .then(json => this.setState({ makeupItems: json , loading: false, displayedItems:json }));
+            .then(json => this.setState({ makeupItems: json , loading: false }));
         
         
     }
@@ -64,6 +64,10 @@ export class FilterMakeupSearch extends React.Component<RouteComponentProps<{}>,
         handleSearchChange(e:ChangeEvent<HTMLInputElement>) {
 
             const filteredItems = this.state.makeupItems.filter(item => (item.name.toLowerCase().search(e.target.value.toLowerCase()) != -1));
+            filteredItems.sort(function (item1, item2) {
+               return item1.name.toLowerCase().localeCompare(item2.name.toLowerCase())
+            });
+            
             this.setState({
                 searchValue: e.target.value,
                 displayedItems: filteredItems,
